@@ -1,0 +1,56 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Get Cryptocurrency Data",
+        "description": "Access cryptocurrency data from CoinGecko",
+        "version": "v1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.coinpaprika.com/v1/ticker"
+        }
+    ],
+    "paths": {
+        "/btc-bitcoin": {
+            "get": {
+                "description": "Get data about Bitcoin",
+                "operationId": "GetBitcoinDetails",
+                "parameters": [
+                    {
+                        "name": "bitcoindetails",
+                        "in": "query",
+                        "method": "GET",
+                        "required": false,
+                        "description": "Get the price of BTC",
+                        "schema": {
+                            "type": "string",
+                            "default": "usd"
+                        }
+                    }
+                ]
+            }
+        },
+        "/eth-ethereum": {
+            "get": {
+                "description": "Get data about Ethereum",
+                "operationId": "GetETHDetails",
+                "parameters": [
+                    {
+                        "name": "ETHDetails",
+                        "in": "query",
+                        "method": "GET",
+                        "required": false,
+                        "description": "Get the price of ETH",
+                        "schema": {
+                            "type": "string",
+                            "default": "usd"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {}
+    }
+}
