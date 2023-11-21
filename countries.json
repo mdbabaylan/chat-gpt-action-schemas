@@ -1,0 +1,59 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Get Data from a country",
+        "description": "Access datas about countries from the restcountries' endpoint",
+        "version": "v1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://restcountries.com/v3.1"
+        }
+    ],
+    "paths": {
+        "/all": {
+            "get": {
+                "description": "Get details about the countries the user mentions",
+                "operationId": "GetMultipleCountryDetails",
+                "parameters": [
+                    {
+                        "name": "countries",
+                        "in": "query",
+                        "required": true,
+                        "method": "GET",
+                        "description": "Array of country names to get the details",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "style": "form",
+                        "explode": true
+                    }
+                ]
+            }
+        },
+        "/name/country": {
+            "get": {
+                "description": "Get details about a specific country",
+                "operationId": "GetCountryDetails",
+                "parameters": [
+                    {
+                        "name": "countryName",
+                        "in": "query",
+                        "method": "GET",
+                        "required": true,
+                        "description": "Get the details about a country",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {}
+    }
+}
